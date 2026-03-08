@@ -68,14 +68,18 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
-    box-shadow: 0 4px 24px rgba(99, 160, 184, 0.18);
+    box-shadow:
+        0 0 15px 5px rgb(241, 146, 146),
+        0 0 30px 10px rgb(99, 160, 184);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
     animation: fadeUp 0.8s ease both;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 36px rgba(99, 160, 184, 0.35);
+    box-shadow:
+        0 0 20px 8px rgb(241, 146, 146),
+        0 0 40px 15px rgb(99, 160, 184);
 }
 
 .card:nth-child(1) { animation-delay: 0.1s; }
