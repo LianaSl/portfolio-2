@@ -1,42 +1,33 @@
-body {
-    padding: 0%;
-    margin:0;
-    background-image: url(fon3.jpeg);
+.cv-section {
+    min-height: 70vh;
+    background-color: rgba(198, 220, 238, 0.7);
+    background-image: url(put5.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(198, 220, 238, 0.8); /* голубой оверлей как на вашем основном сайте */
     background-blend-mode: overlay;
-    min-height: 100vh;
-    width: 100%;
+    padding: 50px 40px;
 }
-.cv-section {
-    min-height: 100vh;
-    padding: 60px 40px;
-    font-family: "EB Garamond", serif;
-}
-.cv-title {
-    text-align: center;
-    font-size: 48px;
-    color: rgb(5, 114, 187);
-    margin-bottom: 50px;
-}
+
 .cv-container {
     display: flex;
     gap: 40px;
     justify-content: center;
     align-items: flex-start;
-    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
 }
+
 .cv-block {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 30px;
+    gap: 20px;
+    background: rgba(198, 220, 238, 0.55);
+    border-radius: 32px;
     padding: 30px;
-    box-shadow: 
+    box-shadow:
         0 0 15px 5px rgb(241, 146, 146),
         0 0 30px 10px rgb(99, 160, 184);
 }
@@ -44,30 +35,54 @@ body {
 .cv-header {
     display: flex;
     align-items: center;
-    gap: 15px;
-    color: rgb(5, 114, 187);
-    font-size: 28px;
+    gap: 12px;
 }
 
-.flag {
-    font-size: 40px;
+.cv-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: rgb(55, 122, 223);
 }
+
+.flag { font-size: 32px; }
 
 .cv-frame {
-    width: 1100px;
-    height: 750px;
+    width: 100%;
+    height: 600px;
     border: none;
-    border-radius: 15px;
+    border-radius: 16px;
+    box-shadow:
+        0 0 10px 3px rgb(241, 146, 146),
+        0 0 20px 6px rgb(99, 160, 184);
 }
 
 .cv-btn {
-    padding: 12px 35px;
-    background: linear-gradient(to right, rgb(99, 160, 184), rgb(241, 146, 146));
-    color: white;
-    border-radius: 25px;
-    text-decoration: none;
+    font-family: 'EB Garamond', serif;
     font-size: 20px;
-    font-family: "EB Garamond", serif;
-    transition: opacity 0.3s;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, rgb(55, 122, 223), rgb(241, 146, 146));
+    padding: 12px 30px;
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 16px rgba(99, 160, 184, 0.4);
 }
 
+.cv-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(99, 160, 184, 0.6);
+}
+
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column;
+    }
+
+    .cv-frame {
+        height: 400px;
+    }
+
+    .cv-section {
+        padding: 30px 20px;
+    }
+}

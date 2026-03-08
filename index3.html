@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV — Liana Šljonkina</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <header class="header">
+        <nav class="nav">
+            <ul>
+                <li><a href="index1.html">O MNĚ</a></li>
+                <li><a href="index2.html">CERTIFIKÁTY</a></li>
+                <li><a href="index3.html" class="active">CV</a></li>
+                <li><a href="index4.html">FOTOGALERIE</a></li>
+                <li><a href="index5.html">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section class="cv-section">
-        <!-- <h1 class="cv-title">CV / Životopis</h1> -->
+        <div class="cv-container">
 
-        <div class="cv-container">   <!-- ← оба блока ВНУТРИ контейнера -->
-
-            <!-- Чешское резюме -->
             <div class="cv-block">
                 <div class="cv-header">
                     <span class="flag">🇨🇿</span>
@@ -22,17 +36,21 @@
                 <a href="CV_CZ_SLJONKINA.pdf" download class="cv-btn">⬇ Stáhnout PDF</a>
             </div>
 
-            <!-- Английское резюме -->
             <div class="cv-block">
                 <div class="cv-header">
-                    <span class="flag"></span>
+                    <span class="flag">🇬🇧</span>
                     <h2>CV — English</h2>
                 </div>
                 <iframe src="CV_EN_SLJONKINA.pdf" class="cv-frame"></iframe>
                 <a href="CV_EN_SLJONKINA.pdf" download class="cv-btn">⬇ Download PDF</a>
             </div>
 
-        </div>  <!-- конец cv-container -->
+        </div>
     </section>
+
+    <footer class="footer">
+        <div>© created by Liana Šljonkina</div>
+    </footer>
+
 </body>
 </html>
