@@ -1,4 +1,294 @@
-body{
-    background: blueviolet;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+.header {
+    width: 100%;
+    height: 15vh;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(
+        to right,
+        rgb(55, 122, 223),
+        rgb(99, 160, 184),
+        rgb(241, 146, 146)
+    );
+}
+
+.nav { width: 100%; }
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 24px;
+    margin: 0;
+}
+
+.nav ul li { cursor: pointer; }
+
+.nav ul li a,
+.nav ul li {
+    font-family: 'EB Garamond', serif;
+    font-size: 40px;
+    text-decoration: none;
+    color: hsl(219, 69%, 42%);
+    cursor: pointer;
+    transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 10px rgba(100, 120, 200, 0.25);
+}
+
+.nav ul li a:hover,
+.nav ul li:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(180, 100, 160, 0.4);
+}
+
+.nav ul li a.active { color: white; }
+
+.aside {
+    min-height: 70vh;
+    background-color: rgba(198, 220, 238, 0.7);
+    background-image: url(put5.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 60px;
+}
+
+.contact-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    text-align: center;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: rgb(38, 70, 130);
+    letter-spacing: 0.06em;
+}
+
+.contact-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.35rem;
+    line-height: 1.85;
+    color: rgb(38, 70, 130);
+    font-style: italic;
+    max-width: 600px;
+}
+
+.divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(55, 122, 223), rgb(241, 146, 146));
+    border-radius: 2px;
+}
+
+.socials {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: rgb(38, 70, 130);
+    transition: transform 0.25s, color 0.25s;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    color: rgb(55, 122, 223);
+}
+
+.social-link i { font-size: 2.2rem; }
+
+.social-link span {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.btn-contact {
+    display: inline-block;
+    padding: 0.85rem 2.6rem;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgb(55, 122, 223) 0%, rgb(241, 146, 146) 100%);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(55, 122, 223, 0.3), 0 1px 4px rgba(241, 146, 146, 0.2);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-contact:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(38, 70, 130, 0.4);
+    backdrop-filter: blur(6px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay:target {
+    display: flex;
+}
+
+.modal {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2.8rem 2.5rem 2.2rem;
+    max-width: 480px;
+    width: 92%;
+    position: relative;
+    box-shadow:
+        0 8px 40px rgba(55, 122, 223, 0.18),
+        0 2px 8px rgba(241, 146, 146, 0.15);
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.3rem;
+    font-size: 1.6rem;
+    color: rgb(99, 160, 184);
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close:hover { color: rgb(241, 146, 146); }
+
+.modal h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: rgb(38, 70, 130);
+    margin-bottom: 1.6rem;
+    text-align: center;
+}
+
+.modal label {
+    display: block;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(99, 160, 184);
+    margin-bottom: 0.4rem;
+    margin-top: 1.1rem;
+}
+
+.modal label:first-of-type { margin-top: 0; }
+
+.modal input,
+.modal textarea {
+    width: 100%;
+    border: 1.5px solid #dde4f0;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: rgb(38, 70, 130);
+    background: #fafcff;
+    transition: border-color 0.2s;
+    outline: none;
+    resize: none;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+    border-color: rgb(55, 122, 223);
+}
+
+.modal textarea { height: 110px; }
+
+.btn-send {
+    display: block;
+    margin-top: 1.6rem;
+    width: 100%;
+    padding: 0.85rem;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgb(55, 122, 223) 0%, rgb(241, 146, 146) 100%);
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(55, 122, 223, 0.25);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-send:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.footer {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    font-family: "EB Garamond", serif;
+    background-image: linear-gradient(
+        to left,
+        rgb(55, 122, 223),
+        rgb(99, 160, 184),
+        rgb(241, 146, 146)
+    );
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        padding: 16px 20px;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap:

@@ -1,12 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Liana Šljonkina — Kontakt</title>
     <link rel="stylesheet" href="style5.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-    
+
+    <header class="header">
+        <nav class="nav">
+            <ul>
+                <li><a href="index1.html">O MNĚ</a></li>
+                <li><a href="index2.html">CERTIFIKATY</a></li>
+                <li><a href="index3.html">CV</a></li>
+                <li><a href="index4.html">FOTOGALERIE</a></li>
+                <li><a href="index5.html" class="active">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="aside">
+        <div class="parent">
+            <div class="contact-block">
+
+                <h1 class="contact-title">Kontakt</h1>
+
+                <p class="contact-text">
+                    Děkuji, že jste se dostali až na poslední stránku mého webu.<br>
+                    Těší mě, že vás zde prezentované informace zaujaly.<br>
+                    Pokud chcete, můžete mi napsat osobní zprávu<br>
+                    nebo mě najít a sledovat na mých sociálních sítích.
+                </p>
+
+                <div class="divider"></div>
+
+                <div class="socials">
+                    <a class="social-link" href="https://instagram.com/" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a class="social-link" href="https://linkedin.com/in/" target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a class="social-link" href="https://github.com/LianaSl" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+
+                <a href="#modal" class="btn-contact">Napsat zprávu</a>
+
+            </div>
+        </div>
+    </aside>
+
+    <footer class="footer">
+        <div>© created by Liana Šljonkina</div>
+    </footer>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <a href="#" class="modal-close">&times;</a>
+            <h2>Napište mi</h2>
+            <label for="iname">Jméno</label>
+            <input type="text" id="iname" placeholder="Vaše jméno" />
+            <label for="iemail">E-mail</label>
+            <input type="email" id="iemail" placeholder="vas@email.cz" />
+            <label for="imessage">Zpráva</label>
+            <textarea id="imessage" placeholder="Vaše zpráva..."></textarea>
+            <a href="mailto:your@email.com" class="btn-send">Odeslat zprávu</a>
+        </div>
+    </div>
+
 </body>
 </html>
