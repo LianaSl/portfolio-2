@@ -1,93 +1,115 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="cs">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Фотогалерея</title>
+  <title>Fotogalerie — Liana Šljonkina</title>
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style4.css" />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <header class="gallery-header">
-    <h1>FOTOGALERIE</h1>
+  <header class="header">
+    <nav class="nav">
+      <ul>
+        <li><a href="index1.html">O MNĚ</a></li>
+        <li><a href="index2.html">CERTIFIKÁTY</a></li>
+        <li><a href="index3.html">CV</a></li>
+        <li><a href="index4.html" class="active">FOTOGALERIE</a></li>
+        <li><a href="index5.html">KONTAKT</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="gallery-grid">
+  <section class="gallery-section">
 
-    <article class="photo-card">
-      <div class="photo-wrap">
-        <img src="foto1.jpg" alt="Фото 1" />
-      </div>
-      <div class="photo-caption">
-        <p>Varšava 2024</p>
-      </div>
-    </article>
+    <!-- <div class="gallery-header">
+      <h1>FOTOGALERIE</h1>
+    </div> -->
 
-    <article class="photo-card">
-      <div class="photo-wrap">
-        <img src="foto2.jpg" alt="Фото 2" />
-      </div>
-      <div class="photo-caption">
-        <p>Florencie 2022</p>
-      </div>
-    </article>
+    <div class="gallery-grid">
 
-    <article class="photo-card">
-      <div class="photo-wrap">
-        <img src="foto3.jpg" alt="Фото 3" />
-      </div>
-      <div class="photo-caption">
-        <p>UHKT. Praha. 2018</p>
-      </div>
-    </article>
+      <article class="photo-card">
+        <div class="photo-wrap">
+          <img src="foto1.jpg" alt="Varšava 2024" />
+        </div>
+        <div class="photo-caption">
+          <p>Varšava 2024</p>
+        </div>
+      </article>
 
-    <article class="photo-card">
-      <div class="photo-wrap">
-        <img src="foto4.jpg" alt="Фото 4" />
-      </div>
-      <div class="photo-caption">
-        <p>Letiste Praha. 2024</p>
-      </div>
-    </article>
+      <article class="photo-card">
+        <div class="photo-wrap">
+          <img src="foto2.jpg" alt="Florencie 2022" />
+        </div>
+        <div class="photo-caption">
+          <p>Florencie 2022</p>
+        </div>
+      </article>
 
-    <article class="photo-card">
-      <div class="photo-wrap">
-        <img src="foto5.jpg" alt="Фото 5" />
-      </div>
-      <div class="photo-caption">
-        <p>Zakyntos. Řecko. 2023</p>
-      </div>
-    </article>
+      <article class="photo-card">
+        <div class="photo-wrap">
+          <img src="foto3.jpg" alt="UHKT Praha 2018" />
+        </div>
+        <div class="photo-caption">
+          <p>UHKT. Praha. 2018</p>
+        </div>
+      </article>
 
-    <article class="photo-card">
-      <div class="photo-wrap">
-        <img src="foto 8.png" alt="Фото 8" />
-      </div>
-      <div class="photo-caption">
-        <p>Letiste.Praha.2025 </p>
-      </div>
-    </article>
+      <article class="photo-card">
+        <div class="photo-wrap">
+          <img src="foto4.jpg" alt="Letiště Praha 2024" />
+        </div>
+        <div class="photo-caption">
+          <p>Letiště Praha. 2024</p>
+        </div>
+      </article>
 
-    <article class="photo-card">
-      <div class="photo-wrap">
-        <img src="foto7.png" alt="Фото 7" />
-      </div>
-      <div class="photo-caption">
-    <p>Letiste.Praha.2024</p>
-      </div>
-    </article>
+      <article class="photo-card">
+        <div class="photo-wrap">
+          <img src="foto5.jpg" alt="Zakynthos Řecko 2023" />
+        </div>
+        <div class="photo-caption">
+          <p>Zakynthos. Řecko. 2023</p>
+        </div>
+      </article>
 
-    <article class="photo-card">
-      <div class="photo-wrap">
-        <img src="foto 6.jpg" alt="Фото 6" />
-      </div>
-      <div class="photo-caption">
-        <p>Praha.2020</p>
-      </div>
-    </article>
+      <article class="photo-card">
+        <div class="photo-wrap">
+          <img src="foto 8.png" alt="Letiště Praha 2025" />
+        </div>
+        <div class="photo-caption">
+          <p>Letiště Praha. 2025</p>
+        </div>
+      </article>
 
+      <article class="photo-card">
+        <div class="photo-wrap">
+          <img src="foto7.png" alt="Letiště Praha 2024" />
+        </div>
+        <div class="photo-caption">
+          <p>Letiště Praha. 2024</p>
+        </div>
+      </article>
+
+      <article class="photo-card">
+        <div class="photo-wrap">
+          <img src="foto 6.jpg" alt="Praha 2020" />
+        </div>
+        <div class="photo-caption">
+          <p>Praha. 2020</p>
+        </div>
+      </article>
+
+    </div>
   </section>
+
+  <footer class="footer">
+    <div>© created by Liana Šljonkina</div>
+  </footer>
 
 </body>
 </html>

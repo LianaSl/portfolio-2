@@ -1,34 +1,24 @@
-:root {
-  --pink: #e8a4b8;
-  --blue: #7aa7c7;
-  --dark: #2b2b3b;
-  --light: #fdf6f9;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  background-image: linear-gradient(
-    to right,
-    rgb(55, 122, 223),
-    rgb(99, 160, 184),
-    rgb(241, 146, 146)
-  );
-  color: var(--dark);
-  font-family: 'EB Garamond', serif;
-  padding: 60px 20px 80px;
+.gallery-section {
+  min-height: 70vh;
+  background-color: rgba(198, 220, 238, 0.7);
+  background-image: url(put5.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  padding: 50px 40px 70px;
 }
 
 .gallery-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 50px;
 }
 
 .gallery-header h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2.4rem, 6vw, 4rem);
   font-weight: 700;
-  background: linear-gradient(135deg, var(--blue), var(--pink));
+  background: linear-gradient(135deg, rgb(55, 122, 223), rgb(241, 146, 146));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -40,7 +30,7 @@ body {
   width: 80px;
   height: 3px;
   margin: 16px auto 0;
-  background: linear-gradient(90deg, var(--blue), var(--pink));
+  background: linear-gradient(90deg, rgb(55, 122, 223), rgb(241, 146, 146));
   border-radius: 2px;
 }
 
@@ -53,16 +43,20 @@ body {
 }
 
 .photo-card {
-  background: #fff;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(122, 167, 199, 0.15);
+  box-shadow:
+    0 0 15px 5px rgb(241, 146, 146),
+    0 0 30px 10px rgb(99, 160, 184);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .photo-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 36px rgba(122, 167, 199, 0.28);
+  box-shadow:
+    0 0 20px 8px rgb(241, 146, 146),
+    0 0 40px 15px rgb(99, 160, 184);
 }
 
 .photo-wrap {
@@ -85,14 +79,14 @@ body {
 
 .photo-caption {
   padding: 14px 18px 18px;
-  border-top: 1px solid rgba(122, 167, 199, 0.12);
+  border-top: 1px solid rgba(99, 160, 184, 0.2);
 }
 
 .photo-caption p {
   font-family: 'EB Garamond', serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5;
-  color: #555;
+  color: rgb(30, 80, 140);
   font-style: italic;
 }
 
@@ -101,5 +95,6 @@ body {
 }
 
 @media (max-width: 480px) {
+  .gallery-section { padding: 30px 20px 50px; }
   .gallery-grid { grid-template-columns: 1fr; gap: 20px; }
 }
