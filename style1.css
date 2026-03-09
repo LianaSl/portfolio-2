@@ -1,7 +1,105 @@
-/* Переопределяем aside для этой страницы */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 15vh;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(
+        to right,
+        rgb(55, 122, 223),
+        rgb(99, 160, 184),
+        rgb(241, 146, 146)
+    );
+}
+
+.nav { width: 100%; }
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 24px;
+    margin: 0;
+}
+
+.nav ul li { cursor: pointer; }
+
+.nav ul li a,
+.nav ul li {
+    font-family: 'EB Garamond', serif;
+    font-size: 40px;
+    text-decoration: none;
+    color: hsl(219, 69%, 42%);
+    cursor: pointer;
+    transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: 0 2px 10px rgba(100, 120, 200, 0.25);
+}
+
+.nav ul li a:hover,
+.nav ul li:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(180, 100, 160, 0.4);
+}
+
+.nav ul li a.active {
+    background: linear-gradient(135deg, rgb(55, 122, 223), rgb(241, 146, 146));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav ul li:hover { color: white; }
+
+.footer {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    font-family: "EB Garamond", serif;
+    background-image: linear-gradient(
+        to left,
+        rgb(55, 122, 223),
+        rgb(99, 160, 184),
+        rgb(241, 146, 146)
+    );
+}
+
+@media (max-width: 768px) {
+    .header { height: auto; padding: 16px 20px; }
+    .nav ul { flex-wrap: wrap; justify-content: center; gap: 8px; padding: 10px 16px; }
+    .nav ul li a, .nav ul li { font-size: 22px; }
+}
+
+/* ===== O MNĚ PAGE ===== */
+
 .about-aside {
     display: block !important;
     align-items: unset !important;
+    flex: 1;
+    background-color: rgba(198, 220, 238, 0.7);
+    background-image: url(put5.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
 }
 
 .about-wrapper {
@@ -11,7 +109,6 @@
     font-family: "EB Garamond", serif;
 }
 
-/* HERO */
 .about-hero {
     display: flex;
     align-items: center;
@@ -32,9 +129,7 @@
     transition: transform 0.35s ease;
 }
 
-.about-hero .foto-block img:hover {
-    transform: scale(1.03);
-}
+.about-hero .foto-block img:hover { transform: scale(1.03); }
 
 .about-hero h1 {
     font-family: 'Playfair Display', serif;
@@ -54,7 +149,6 @@
     color: rgb(30, 80, 140);
 }
 
-/* КАРТОЧКИ */
 .about-sections {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -88,12 +182,7 @@
 .card:nth-child(4) { animation-delay: 0.4s; }
 .card:nth-child(5) { animation-delay: 0.5s; }
 
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-
+.card-header { display: flex; align-items: center; gap: 14px; }
 .card-icon { font-size: 42px; }
 
 .card h2 {
@@ -118,7 +207,6 @@
         0 0 20px 6px rgb(99, 160, 184);
 }
 
-/* широкая карточка */
 .card.wide {
     grid-column: 1 / -1;
     flex-direction: row;
@@ -126,12 +214,7 @@
     gap: 44px;
 }
 
-.card.wide img {
-    width: 260px;
-    height: 260px;
-    flex-shrink: 0;
-    border-radius: 30px;
-}
+.card.wide img { width: 260px; height: 260px; flex-shrink: 0; border-radius: 30px; }
 
 .card.wide .card-body {
     flex: 1;
@@ -140,31 +223,25 @@
     gap: 14px;
 }
 
-/* ссылка */
 a.tatar-link {
     color: rgb(55, 122, 223);
     text-decoration: none;
     border-bottom: 1px solid rgba(55, 122, 223, 0.35);
     transition: color 0.2s, border-color 0.2s;
 }
-a.tatar-link:hover {
-    color: rgb(200, 80, 120);
-    border-color: rgb(200, 80, 120);
-}
+a.tatar-link:hover { color: rgb(200, 80, 120); border-color: rgb(200, 80, 120); }
 
-/* анимация */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
     .about-wrapper { padding: 30px 20px; }
     .about-hero { flex-direction: column; text-align: center; }
     .about-hero .foto-block img { width: 240px; height: 300px; }
     .about-hero h1 { font-size: 34px; }
-    .about-hero p  { font-size: 18px; }
+    .about-hero p { font-size: 18px; }
     .about-sections { grid-template-columns: 1fr; }
     .card.wide { flex-direction: column; }
     .card.wide img { width: 100%; height: 220px; }

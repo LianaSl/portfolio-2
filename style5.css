@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .header {
     width: 100%;
     height: 15vh;
@@ -51,10 +57,41 @@
     box-shadow: 0 5px 18px rgba(180, 100, 160, 0.4);
 }
 
-.nav ul li a.active { color: white; }
+.nav ul li a.active {
+    background: linear-gradient(135deg, rgb(55, 122, 223), rgb(241, 146, 146));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav ul li:hover { color: white; }
+
+.footer {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    font-family: "EB Garamond", serif;
+    background-image: linear-gradient(
+        to left,
+        rgb(55, 122, 223),
+        rgb(99, 160, 184),
+        rgb(241, 146, 146)
+    );
+}
+
+@media (max-width: 768px) {
+    .header { height: auto; padding: 16px 20px; }
+    .nav ul { flex-wrap: wrap; justify-content: center; gap: 8px; padding: 10px 16px; }
+    .nav ul li a, .nav ul li { font-size: 22px; }
+}
+
+/* ===== KONTAKT PAGE ===== */
 
 .aside {
-    min-height: 70vh;
+    flex: 1;
     background-color: rgba(198, 220, 238, 0.7);
     background-image: url(put5.jpeg);
     background-size: cover;
@@ -104,11 +141,7 @@
     border-radius: 2px;
 }
 
-.socials {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-}
+.socials { display: flex; gap: 3rem; align-items: center; }
 
 .social-link {
     display: flex;
@@ -120,11 +153,7 @@
     transition: transform 0.25s, color 0.25s;
 }
 
-.social-link:hover {
-    transform: translateY(-5px);
-    color: rgb(55, 122, 223);
-}
-
+.social-link:hover { transform: translateY(-5px); color: rgb(55, 122, 223); }
 .social-link i { font-size: 2.2rem; }
 
 .social-link span {
@@ -145,14 +174,11 @@
     letter-spacing: 0.16em;
     text-transform: uppercase;
     text-decoration: none;
-    box-shadow: 0 4px 18px rgba(55, 122, 223, 0.3), 0 1px 4px rgba(241, 146, 146, 0.2);
+    box-shadow: 0 4px 18px rgba(55, 122, 223, 0.3);
     transition: opacity 0.2s, transform 0.2s;
 }
 
-.btn-contact:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
+.btn-contact:hover { opacity: 0.9; transform: translateY(-2px); }
 
 .modal-overlay {
     display: none;
@@ -165,9 +191,7 @@
     justify-content: center;
 }
 
-.modal-overlay:target {
-    display: flex;
-}
+.modal-overlay:target { display: flex; }
 
 .modal {
     background: #fff;
@@ -237,9 +261,7 @@
 }
 
 .modal input:focus,
-.modal textarea:focus {
-    border-color: rgb(55, 122, 223);
-}
+.modal textarea:focus { border-color: rgb(55, 122, 223); }
 
 .modal textarea { height: 110px; }
 
@@ -261,34 +283,4 @@
     transition: opacity 0.2s, transform 0.2s;
 }
 
-.btn-send:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-.footer {
-    height: 20vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: white;
-    font-family: "EB Garamond", serif;
-    background-image: linear-gradient(
-        to left,
-        rgb(55, 122, 223),
-        rgb(99, 160, 184),
-        rgb(241, 146, 146)
-    );
-}
-
-@media (max-width: 768px) {
-    .header {
-        height: auto;
-        padding: 16px 20px;
-    }
-
-    .nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap:
+.btn-send:hover { opacity: 0.9; transform: translateY(-2px); }
