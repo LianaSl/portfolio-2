@@ -232,7 +232,7 @@ body {
     text-align: center;
 }
 
-.modal label {
+.modal form label {
     display: block;
     font-family: 'EB Garamond', serif;
     font-size: 0.88rem;
@@ -243,7 +243,7 @@ body {
     margin-top: 1.1rem;
 }
 
-.modal label:first-of-type { margin-top: 0; }
+.modal form label:first-of-type { margin-top: 0; }
 
 .modal input,
 .modal textarea {
@@ -277,10 +277,19 @@ body {
     font-size: 0.88rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    text-decoration: none;
     text-align: center;
+    border: none;
+    cursor: pointer;
     box-shadow: 0 4px 18px rgba(55, 122, 223, 0.25);
     transition: opacity 0.2s, transform 0.2s;
 }
 
 .btn-send:hover { opacity: 0.9; transform: translateY(-2px); }
+.success-msg {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: rgb(55, 122, 223);
+    padding: 2rem 0;
+    line-height: 1.8;
+}

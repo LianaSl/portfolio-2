@@ -36,11 +36,11 @@
                 </p>
                 <div class="divider"></div>
                 <div class="socials">
-                    <a class="social-link" href="https://instagram.com/" target="_blank">
+                    <a class="social-link" href="https://www.instagram.com/liana_bizne/" target="_blank">
                         <i class="fa-brands fa-instagram"></i>
                         <span>Instagram</span>
                     </a>
-                    <a class="social-link" href="https://linkedin.com/in/" target="_blank">
+                    <a class="social-link" href="https://www.linkedin.com/in/liana-%C5%A1ljonkina/" target="_blank">
                         <i class="fa-brands fa-linkedin-in"></i>
                         <span>LinkedIn</span>
                     </a>
@@ -61,15 +61,44 @@
     <div class="modal-overlay" id="modal">
         <div class="modal">
             <a href="#" class="modal-close">&times;</a>
-            <h2>Napište mi</h2>
-            <label for="iname">Jméno</label>
-            <input type="text" id="iname" placeholder="Vaše jméno" />
-            <label for="iemail">E-mail</label>
-            <input type="email" id="iemail" placeholder="vas@email.cz" />
-            <label for="imessage">Zpráva</label>
-            <textarea id="imessage" placeholder="Vaše zpráva..."></textarea>
-            <a href="mailto:your@email.com" class="btn-send">Odeslat zprávu</a>
+            <h2></h2>
+            <form id="contact-form" action="https://formspree.io/f/mvzwkqwl" method="POST">
+                <label for="iname">Jméno</label>
+                <input type="text" id="iname" name="name" placeholder="Vaše jméno" required>
+                <label for="iemail">E-mail</label>
+                <input type="email" id="iemail" name="email" placeholder="vas@email.cz" required>
+                <label for="imessage">Zpráva</label>
+                <textarea id="imessage" name="message" placeholder="Vaše zpráva..."></textarea>
+                <button type="submit" class="btn-send">Odeslat zprávu</button>
+            </form>
+            <div id="success-msg" class="success-msg" style="display:none;">
+                ✅ Děkuji! Vaše zpráva byla odeslána.
+            </div>
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const successMsg = document.getElementById('success-msg');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                form.style.display = 'none';
+                successMsg.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>
+    </div>
+
 </body>
 </html>
