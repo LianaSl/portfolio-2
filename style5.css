@@ -88,7 +88,7 @@ body {
     .nav ul li a, .nav ul li { font-size: 22px; }
 }
 
-/* ===== KONTAKT PAGE ===== */
+/* kontakt str.   */
 
 .aside {
     flex: 1;
@@ -120,14 +120,14 @@ body {
 
 .contact-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 3.50rem;
     color: rgb(38, 70, 130);
     letter-spacing: 0.06em;
 }
 
 .contact-text {
     font-family: 'EB Garamond', serif;
-    font-size: 1.35rem;
+    font-size: 1.50rem;
     line-height: 1.85;
     color: rgb(38, 70, 130);
     font-style: italic;
