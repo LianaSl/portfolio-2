@@ -49,7 +49,7 @@
                         <span>GitHub</span>
                     </a>
                 </div>
-                <a href="#modal" class="btn-contact">Napsat zprávu</a>
+                <button id="open-modal-btn" class="btn-contact">Napsat zprávu</button>
             </div>
         </div>
     </aside>
@@ -60,45 +60,30 @@
 
     <div class="modal-overlay" id="modal">
         <div class="modal">
-            <a href="#" class="modal-close">&times;</a>
-            <h2></h2>
+            <button id="modal-close-btn" class="modal-close">&times;</button>
+            <h2>Napište mi</h2>
             <form id="contact-form" action="https://formspree.io/f/mvzwkqwl" method="POST">
-                <label for="iname">Jméno</label>
-                <input type="text" id="iname" name="name" placeholder="Vaše jméno" required>
-                <label for="iemail">E-mail</label>
-                <input type="email" id="iemail" name="email" placeholder="vas@email.cz" required>
-                <label for="imessage">Zpráva</label>
-                <textarea id="imessage" name="message" placeholder="Vaše zpráva..."></textarea>
+                <div class="field-wrap">
+                    <label for="iname">Jméno</label>
+                    <input type="text" id="iname" name="name" placeholder="Vaše jméno">
+                </div>
+                <div class="field-wrap">
+                    <label for="iemail">E-mail</label>
+                    <input type="email" id="iemail" name="email" placeholder="vas@email.cz">
+                </div>
+                <div class="field-wrap">
+                    <label for="imessage">Zpráva</label>
+                    <textarea id="imessage" name="message" placeholder="Vaše zpráva..."></textarea>
+                </div>
                 <button type="submit" class="btn-send">Odeslat zprávu</button>
             </form>
             <div id="success-msg" class="success-msg" style="display:none;">
                 ✅ Děkuji! Vaše zpráva byla odeslána.
+                
             </div>
         </div>
     </div>
 
-    <script>
-        const form = document.getElementById('contact-form');
-        const successMsg = document.getElementById('success-msg');
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const data = new FormData(form);
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: data,
-                headers: { 'Accept': 'application/json' }
-            });
-            if (response.ok) {
-                form.style.display = 'none';
-                successMsg.style.display = 'block';
-            }
-        });
-    </script>
-
-</body>
-</html>
-    </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
